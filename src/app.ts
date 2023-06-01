@@ -52,6 +52,6 @@ export class App {
     }
 
     public start(): void {
-        this.app.listen(3000, () => console.log('Server started at http://localhost:3000'));
+        this.app.listen(5050, () => console.log('Server started at http://localhost:5000'));
     }
 };
