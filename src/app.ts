@@ -6,6 +6,7 @@ import cors from 'cors';
 
 // import routes 
 import AuthRouter from './routes/AuthRoute';
+import UserRouter from './routes/UserRoute';
 
 
 
@@ -36,7 +37,9 @@ export class App {
             res.send('Hello World!');
         });
 
-        this.app.use('/', AuthRouter);
+        this.app.use('/auth', AuthRouter);
+
+        this.app.use('/user', UserRouter);
 
         this.app.get('*' || '/*/*', (req: Request, res: Response) => {
             res.status(404).send('Not Found');
@@ -52,6 +55,6 @@ export class App {
     }
 
     public start(): void {
-        this.app.listen(5050, () => console.log('Server started at http://localhost:5000'));
+        this.app.listen(5050, () => console.log('Server started at http://localhost:5050'));
     }
 };

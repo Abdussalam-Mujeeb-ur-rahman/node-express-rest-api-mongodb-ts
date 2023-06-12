@@ -78,12 +78,14 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     await user?.save();
 
     // Set a cookie containing the session token with the appropriate domain, path, and expiration
-    res.cookie('sessionToken', user!.authentication.sessionToken, { 
-      domain: 'localhost', path: '/', expires: new Date
-    });
+    res.cookie('sessionToken', user!.authentication.sessionToken, {
+      domain: 'localhost',
+      path: '/',
+      expires: new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours in milliseconds
+    })
 
     // Respond with a 200 status and a success message along with the user data
-    return res.status(200).json({ message: "user logged in successfully!", user });
+    res.status(200).json({ message: "user logged in successfully!", user });
   } catch (error) {
     // If an error occurs, pass it to the next middleware for error handling
     next(error);
