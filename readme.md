@@ -28,8 +28,8 @@ The application runs on http://localhost:5000 by default.
 
 ## API Endpoints
 The API exposes the following endpoints:
-- GET /: Get homepage
-- POST /auth/signup: Create user
+- `GET /`: Get homepage
+- `POST /auth/signup`: Create user
    - request body:  
    `
 {
@@ -38,7 +38,7 @@ The API exposes the following endpoints:
   "password": "123456"
 } 
 `
-- POST /auth/login: Login user
+- `POST /auth/login`: Login user
    - request body: 
    `
    {
@@ -47,9 +47,9 @@ The API exposes the following endpoints:
   "password": "123456"
 }
 `
-- GET /user/getAllUsers: Get all users (only logged in users)
-- DELETE /user/deleteUser/:id: Delete user (only owners)
-- PATCH /user/updateUser/:id: Update user (only owners)
+- `GET /user/getAllUsers`: Get all users (only logged in users)
+- `DELETE /user/deleteUser/:id` - Delete user (only owners)
+-` PATCH /user/updateUser/:id` - Update user (only owners)
 
 ## Built With
 
