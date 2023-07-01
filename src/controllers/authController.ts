@@ -2,8 +2,6 @@
 import { Request, Response, NextFunction } from "express";
 import { createUser, getUserByEmail } from '../models/UserModel';
 import { Authentication, random } from '../helpers';
-import jwt from "jsonwebtoken";
-import { userModel } from "../models/UserModel";
 
 // Load environment variables
 require("dotenv").config();

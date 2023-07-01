@@ -34,7 +34,7 @@ export class App {
 
     private routes(): void {
         this.app.get('/', (req: Request, res: Response) => {
-            res.send('Hello World!');
+            res.send('hello welcome');
         });
 
         this.app.use('/auth', AuthRouter);
@@ -55,6 +55,6 @@ export class App {
     }
 
     public start(): void {
-        this.app.listen(5050, () => console.log('Server started at http://localhost:5050'));
+        this.app.listen(5000, () => console.log('Server started at http://localhost:5000'));
     }
 };

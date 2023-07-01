@@ -16,6 +16,8 @@ export const isAuthenticated = async (
   try {
     const sessionToken = req.cookies.sessionToken;
 
+    console.log(req.cookies)
+
     if (!sessionToken) {
       res.status(404).send({ message: "Unauthorized!" });
       return;

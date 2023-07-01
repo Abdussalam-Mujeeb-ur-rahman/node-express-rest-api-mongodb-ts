@@ -5,7 +5,7 @@ import { isAuthenticated, isOwner } from '../middlewares'
 
 const router = Router();
 
-router.get('/getAllUsers', isAuthenticated, getAllUsers);
+router.get('/getAllUsers', isAuthenticated,  getAllUsers);
 router.delete('/deleteUser/:id', isAuthenticated, isOwner, deleteUser);
 router.patch('/updateUser/:id', isAuthenticated, isOwner, updateUser);
 
